@@ -9,24 +9,20 @@ Client::Client(const std::string& user, const std::string pass)
     : user(std::move(user)), pass(std::move(pass)) {
 }
 
-bool Client::upload(const std::string& name, const std::string& location) {
-  const auto response = send("upload", Multipart{{name, File{location}}});
-  return response.status_code == 200;
+Response Client::upload(const std::string& name, const std::string& location) {
+  return send("upload", Multipart{{name, File{location}}});
 }
 
-bool Client::remove(const std::string& name) {
-  const auto response = send("delete", Multipart{{"filenames[]", name}});
-  return response.status_code == 200;
+Response Client::remove(const std::string& name) {
+  return send("delete", Multipart{{"filenames[]", name}});
 }
 
-std::string Client::info() {
-  const auto response = send("info", Parameters{{"sitename", user}});
-  return response.text;
+Response Client::info() {
+  return send("info", Parameters{{"sitename", user}});
 }
 
-std::string Client::info(const std::string& user) {
-  const auto response = send("info", Parameters{{"sitename", user}});
-  return response.text;
+Response Client::info(const std::string& user) {
+  return send("info", Parameters{{"sitename", user}});
 }
 
 } // namespace nea
