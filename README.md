@@ -18,7 +18,7 @@ $ git clone --recursive https://github.com/matthin/neapolis.git opt/neapolis
 ##### CMakeLists.txt
 ```CMake
 add_subdirectory(opt/neapolis)
-include_directories(opt/neoc/neapolis)
+include_directories(opt/neapolis/include)
 target_link_libraries(YOUR_EXECUTABLE neapolis)
 ```
 
