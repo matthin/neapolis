@@ -1,7 +1,5 @@
 #include "Client.h"
-#include <cpr.h>
 #include <utility>
-#include <iostream>
 
 namespace nea {
 
