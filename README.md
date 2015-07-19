@@ -1,6 +1,12 @@
 # neapolis
 A C++ wrapper for the Neocities API.
 
+# Requirements
+* libcurl (sudo apt-get install libcurl4-openssl-dev)
+* C++11 campatible compiler
+* CMake v2.8+
+* Git v1.6.5+
+
 # Usage
 Assuming you're using CMake, and want neapolis to be at 'opt/neapolis'.
 
@@ -22,7 +28,7 @@ target_link_libraries(YOUR_EXECUTABLE neapolis)
 $ git clone --recursive https://github.com/matthin/neapolis.git
 $ cd neapolis
 $ mkdir build && cd build
-$ cmake ..
+$ cmake -DUSE_SYSTEM_CURL=ON ..
 $ make
 ```
 
