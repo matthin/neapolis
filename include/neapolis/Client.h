@@ -23,7 +23,7 @@ private:
   // I should look into using something like boost::variant,
   // since I only really care about using Multipart or Parameters.
   template<typename T>
-  Response send(const std::string& path, const T& uriParams) const {
+  Response send(const std::string& path, const T& uriParams) {
     const auto response = cpr::Post(
       Url{std::string(rootPath) + path},
       Authentication{user, pass},
