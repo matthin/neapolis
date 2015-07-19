@@ -3,7 +3,7 @@
 #include <utility>
 #include <iostream>
 
-namespace neoc {
+namespace nea {
 
 constexpr char Client::rootPath[];
 
@@ -31,5 +31,5 @@ std::string Client::info(const std::string& user) {
   return response.text;
 }
 
-} // namespace neoc
+} // namespace nea
 

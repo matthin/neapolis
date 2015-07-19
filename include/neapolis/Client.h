@@ -3,7 +3,7 @@
 #include <cpr.h>
 #include <string>
 
-namespace neoc {
+namespace nea {
 
 class Client {
 public:
@@ -33,5 +33,5 @@ private:
   }
 };
 
-} // namespace neoc
+} // namespace nea
 
