@@ -12,36 +12,22 @@ Client::Client(const std::string& user, const std::string pass)
 }
 
 bool Client::upload(const std::string& name, const std::string& location) {
-  const auto response = cpr::Post(
-    Url{std::string(rootPath) + "upload"},
-    Authentication{user, pass},
-    Multipart{{name, File{location}}}
-  );
+  const auto response = send("upload", Multipart{{name, File{location}}});
   return response.status_code == 200;
 }
 
 bool Client::remove(const std::string& name) {
-  const auto response = cpr::Post(
-    Url{std::string(rootPath) + "delete"},
-    Authentication{user, pass},
-    Multipart{{"filenames[]", name}}
-  );
+  const auto response = send("delete", Multipart{{"filenames[]", name}});
   return response.status_code == 200;
 }
 
 std::string Client::info() {
-  const auto response = cpr::Get(
-    Url{std::string(rootPath) + "info"},
-    Authentication{user, pass}
-  );
+  const auto response = send("info", Parameters{{"sitename", user}});
   return response.text;
 }
 
 std::string Client::info(const std::string& user) {
-  const auto response = cpr::Get(
-    Url{std::string(rootPath) + "info"},
-    Parameters{{"sitename", user}}
-  );
+  const auto response = send("info", Parameters{{"sitename", user}});
   return response.text;
 }
 
