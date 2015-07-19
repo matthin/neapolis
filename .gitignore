@@ -1,0 +1,5 @@
+build/
+opt/cpr/
+
+*.pyc
+
