@@ -15,7 +15,7 @@ flags = [
     '-I',
     '.',
     '-I',
-    'include/neoc',
+    'include/neapolis',
     'opt/cpr/include'
 ]
 
