@@ -2,6 +2,7 @@
 
 #include <cpr.h>
 #include <string>
+#include <vector>
 #include "Response.h"
 
 namespace nea {
@@ -10,7 +11,9 @@ class Client {
 public:
   Client(const std::string& user, const std::string pass);
 
-  Response upload(const std::string& name, const std::string& location);
+  Response upload(
+    const std::vector<std::pair<std::string, std::string>>& files
+  );
   Response remove(const std::string& name);
   Response info();
   Response info(const std::string& user);

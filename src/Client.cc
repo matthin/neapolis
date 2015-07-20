@@ -9,8 +9,14 @@ Client::Client(const std::string& user, const std::string pass)
     : user(std::move(user)), pass(std::move(pass)) {
 }
 
-Response Client::upload(const std::string& name, const std::string& location) {
-  return send("upload", Multipart{{name, File{location}}});
+Response Client::upload(
+  const std::vector<std::pair<std::string, std::string>>& files
+) {
+  Multipart uriParams{};
+  for (const auto& file : files) {
+    uriParams.parts.push_back({file.first, File{file.second}});
+  }
+  return send("upload", uriParams);
 }
 
 Response Client::remove(const std::string& name) {
