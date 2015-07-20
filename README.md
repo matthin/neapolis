@@ -25,8 +25,11 @@ target_link_libraries(YOUR_EXECUTABLE neapolis)
 ### Example
 ```C++
 nea::Client client("user", "pass");
-client.upload("index.html", "path/to/index.html");
-std::cout << client.info("some_user") << std::endl;
+std::cout << client.upload({
+  {"test.html", "path/to/test.html"}
+}).successful() << std::endl;
+std::cout << client.info("some_user").successful() << std::endl;
+std::cout << client.remove("test.html").successful() << std::endl;
 ```
 
 # Contributors
