@@ -1,3 +1,6 @@
 [submodule "opt/cpr"]
 	path = opt/cpr
 	url = https://github.com/whoshuu/cpr.git
+[submodule "opt/catch"]
+	path = opt/catch
+	url = https://github.com/philsquared/Catch.git
