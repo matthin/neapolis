@@ -42,3 +42,18 @@ $ cmake -DUSE_SYSTEM_CURL=ON ..
 $ make
 ```
 
+##### State of Unit Testing
+
+I can't fully wrap my head around mocking objects in C++. I come from a Ruby
+background where everything can be easily modified at runtime, which is a huge
+difference compared to C++.
+
+I've looked into Google Mock and a few different mocking frameworks, but I
+don't like the idea of leaking testing implementation details into the real
+objects, such as needing to declare every mocked method as `virtual`. I'm
+probably forced into doing so, but I first want to to spend quite a while
+researching the most modern mocking pattern.
+
+If anyone else wants to take a shot at mocking the Client object to not hit the
+remote API, I'll gladly welcome it.
+
