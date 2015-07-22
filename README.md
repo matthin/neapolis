@@ -4,7 +4,7 @@ A C++ wrapper for the Neocities API.
 # Requirements
 * libcurl (sudo apt-get install libcurl4-openssl-dev)
 * C++11 campatible compiler
-* CMake v2.8+
+* CMake v2.8.7+
 * Git v1.6.5+
 
 # Usage
