@@ -5,6 +5,8 @@ compiler:
 before_install:
   - git submodule update --init --recursive
 install:
+  - sudo apt-get install g++-4.8 -y --force-yes
+  - if [ "$CXX" == "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
   - mkdir build
   - cd build
   - cmake ..
