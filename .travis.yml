@@ -1,0 +1,13 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+install:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - cd ..
+script:
+  - ./build/test/neapolisTest
+
