@@ -1,4 +1,7 @@
 # neapolis
+[![Build Status](https://travis-ci.org/matthin/neapolis.png?branch=master)]
+(https://travis-ci.org/matthin/neapolis)
+
 A C++ wrapper for the Neocities API.
 
 # Requirements
